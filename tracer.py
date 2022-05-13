@@ -155,7 +155,8 @@ DT_BLACKBODY = 4
 
 dt_dict = {
         "none":DT_NONE,
-        "texture":DT_TEXTURE,
+        "texture":DT_TEXTURE_1,
+        "red":DT_TEXTURE_2,
         "solid":DT_SOLID,
         "grid":DT_GRID,
         "blackbody":DT_BLACKBODY
@@ -237,7 +238,7 @@ except KeyError:
     sys.exit(1)
 
 try:
-    SKY_TEXTURE_INT = st_dict[SKY_TEXTURE]
+    SKY_TEXTURE_INT = st_dict[SKY_TEXTURE_1] or SKY_TEXTURE_INT = st_dict[SKY_TEXTURE_2]
 except KeyError:
     logger.debug("Error: %s is not a valid sky rendering mode", SKY_TEXTURE)
     sys.exit(1)
