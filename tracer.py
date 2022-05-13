@@ -238,7 +238,6 @@ except KeyError:
     sys.exit(1)
 
    
-    
 try:
     SKY_TEXTURE_INT = st_dict[SKY_TEXTURE]
 except KeyError:
