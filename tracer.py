@@ -156,7 +156,6 @@ DT_BLACKBODY = 4
 dt_dict = {
         "none":DT_NONE,
         "texture":DT_TEXTURE,
-        "red":DT_RED,
         "solid":DT_SOLID,
         "grid":DT_GRID,
         "blackbody":DT_BLACKBODY
@@ -349,6 +348,8 @@ texarr_disk = None
 if DISK_TEXTURE == 'texture':
     texarr_disk = spm.imread('textures/adisk.jpg')
 if DISK_TEXTURE == 'test':
+    texarr_disk = spm.imread('textures/adisk_R.jpg')
+if DISK_TEXTURE == 'red':
     texarr_disk = spm.imread('textures/adisktest.jpg')
 if texarr_disk is not None:
     # must convert to float here so we can work in linear colour
