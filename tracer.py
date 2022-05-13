@@ -140,11 +140,13 @@ METHOD = METH_RK4
 ST_NONE = 0
 ST_TEXTURE = 1
 ST_FINAL = 2
+ST_RED = 1
 
 st_dict = {
         "none":ST_NONE,
         "texture":ST_TEXTURE,
-        "final":ST_FINAL
+        "final":ST_FINAL,
+        "red":ST_RED
     }
 
 DT_NONE = 0
@@ -152,13 +154,15 @@ DT_TEXTURE = 1
 DT_SOLID = 2
 DT_GRID = 3
 DT_BLACKBODY = 4
+DT_RED = 1
 
 dt_dict = {
         "none":DT_NONE,
         "texture":DT_TEXTURE,
         "solid":DT_SOLID,
         "grid":DT_GRID,
-        "blackbody":DT_BLACKBODY
+        "blackbody":DT_BLACKBODY,
+        "red":DT_RED
     }
 
 #this section works, but only if the .scene file is good
@@ -242,7 +246,6 @@ try:
 except KeyError:
     logger.debug("Error: %s is not a valid sky rendering mode", SKY_TEXTURE)
     sys.exit(1)
-
 
 logger.debug("%dx%d", RESOLUTION[0], RESOLUTION[1])
 
@@ -328,8 +331,14 @@ def srgbtorgb(arr):
 
 
 logger.debug("Loading textures...")
-if SKY_TEXTURE == 'texture':
-    texarr_sky = spm.imread('textures/bgedit.jpg')
+
+if SKY_TEXTURE in ('texture', 'red'):
+    if SKY_TEXTURE == "texture":
+      texarr_sky = spm.imread('textures/bgedit.jpg')
+      logger.debug(f"texture is {SKY_TEXTURE}")
+    if SKY_TEXTURE == "red":
+      texarr_sky = spm.imread('textures/halpha.jpg')
+      logger.debug(f"texture is {SKY_TEXTURE}")
     # must convert to float here so we can work in linear colour
     texarr_sky = texarr_sky.astype(float)
     texarr_sky /= 255.0
@@ -344,12 +353,13 @@ if SKY_TEXTURE == 'texture':
         texarr_sky = texarr_sky.astype(float)
         texarr_sky /= 255.0
 
+
 texarr_disk = None
 if DISK_TEXTURE == 'texture':
     texarr_disk = spm.imread('textures/adisk.jpg')
-if DISK_TEXTURE == 'test':
-    texarr_disk = spm.imread('textures/adisk_R.jpg')
 if DISK_TEXTURE == 'red':
+    texarr_disk = spm.imread('textures/adisk_R.jpg')
+if DISK_TEXTURE == 'test':
     texarr_disk = spm.imread('textures/adisktest.jpg')
 if texarr_disk is not None:
     # must convert to float here so we can work in linear colour
