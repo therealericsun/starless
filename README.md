@@ -25,10 +25,12 @@ It is still in development and will be presented on my site along with [my real 
 - Generic redshift framework for solid colour objects
 
 ## Installation and usage
+
+Linux:
 ```
-!sudo apt-get install python-numpy python-pil python-imageio
-!pip install scipy==1.1.0
-!git clone https://github.com/rantonels/starless.git
+$ sudo apt-get install python-numpy python-pil python-imageio
+$ pip install scipy==1.1.0
+$ git clone https://github.com/rantonels/starless.git
 ```
 
 Please refer to the [Wiki](https://github.com/rantonels/starless/wiki).
