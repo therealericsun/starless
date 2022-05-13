@@ -44,7 +44,7 @@ DRAWGRAPH = True
 
 OVERRIDE_RES = False
 
-SCENE_FNAME = 'scenes/default.scene'
+SCENE_FNAME = 'scenes/test.scene'
 
 CHUNKSIZE = 9000
 
