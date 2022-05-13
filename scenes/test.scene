@@ -12,6 +12,9 @@ Stepsize=0.04
 
 [geometry]
 
+Diskinner=1.0
+Diskouter=6.
+
 Cameraposition=-6, 2.,-6
 Fieldofview=1.5
 Lookat=0.,0.5,0.
@@ -21,13 +24,9 @@ Upvector=-0.4,1.,0.
 
 Horizongrid=0
 Disktexture=texture
-Skytexture=texture
-Skydiskratio=0.05
+Skytexture=red
+Skydiskratio=0.5
 Gain=1
 Fogdo=1
 Fogmult=0.02
-Blurdo=2
-
-
-Diskinner=4.6
-Diskouter=16.
+Blurdo=1
