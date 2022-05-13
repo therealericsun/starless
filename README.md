@@ -32,5 +32,9 @@ $ sudo apt-get install python-numpy python-pil python-imageio
 $ pip install scipy==1.1.0
 $ git clone https://github.com/rantonels/starless.git
 ```
+Run test scene with:
+```
+!python tracer.py 
+```
 
 Please refer to the [Wiki](https://github.com/rantonels/starless/wiki).
