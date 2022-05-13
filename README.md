@@ -34,7 +34,7 @@ $ git clone https://github.com/rantonels/starless.git
 ```
 Run test scene with:
 ```
-!python tracer.py 
+!python tracer.py -d
 ```
 
 Please refer to the [Wiki](https://github.com/rantonels/starless/wiki).
