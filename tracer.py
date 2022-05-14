@@ -12,6 +12,7 @@ import ctypes
 
 import logging
 logging.basicConfig(level=logging.DEBUG)
+logging.getLogger('matplotlib.font_manager').disabled = True
 logger = logging.getLogger(__name__)
 
 #importing scene
