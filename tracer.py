@@ -27,6 +27,8 @@ import bloom
 import gc
 import curses
 
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 #enums
 METH_LEAPFROG = 0
